@@ -8,13 +8,13 @@ subtitle:
 description:
 keywords: js、css、html、react、redux、jade、webpack、gulp、antd、vue、vuex、backbone、markdown
 author: Mobro Zhu
-language: chinese
+language: 
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://mobrochu.github.io/blog/
-root: /blog
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
