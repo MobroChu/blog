@@ -3,18 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 不营养、的个人【技术博客】
-subtitle:
+title: 不营养、【技术博客】
+subtitle: 如果猎鹰，耽于安逸。 -- Mobro Zhu
 description:
 keywords: js、css、html、react、redux、jade、webpack、gulp、antd、vue、vuex、backbone、markdown
 author: Mobro Zhu
-language: 
+language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://mobrochu.github.io/blog/
-root: /
+root: /blog
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 

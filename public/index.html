@@ -5,18 +5,18 @@
   
 
   
-  <title>不营养、的个人【技术博客】</title>
+  <title>不营养【技术博客】</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="keywords" content="js、css、html、react、redux、jade、webpack、gulp、antd、vue、vuex、backbone、markdown">
 <meta property="og:type" content="website">
-<meta property="og:title" content="不营养、的个人【技术博客】">
+<meta property="og:title" content="不营养【技术博客】">
 <meta property="og:url" content="http://mobrochu.github.io/blog/index.html">
-<meta property="og:site_name" content="不营养、的个人【技术博客】">
+<meta property="og:site_name" content="不营养【技术博客】">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不营养、的个人【技术博客】">
+<meta name="twitter:title" content="不营养【技术博客】">
   
-    <link rel="alternate" href="/atom.xml" title="不营养、的个人【技术博客】" type="application/atom+xml">
+    <link rel="alternate" href="/blog/atom.xml" title="不营养【技术博客】" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -24,7 +24,7 @@
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/blog/css/style.css">
 </head>
 
 <body>
@@ -35,22 +35,26 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">不营养、的个人【技术博客】</a>
+        <a href="/blog/" id="logo">不营养【技术博客】</a>
       </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">如果猎鹰，耽于安逸。 -- Mobro Zhu</a>
+        </h2>
       
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          <a class="main-nav-link" href="/blog/">Home</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
         
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
         
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
@@ -63,9 +67,148 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-前端小问题总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/05/17/前端小问题总结/" class="article-date">
+  <time datetime="2018-05-17T13:56:38.000Z" itemprop="datePublished">2018-05-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/05/17/前端小问题总结/">前端小问题总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="document-domain"><a href="#document-domain" class="headerlink" title="document.domain"></a>document.domain</h3><p>通常，解决跨域问题的方法有：</p>
+<blockquote>
+<ol>
+<li>document.domain </li>
+<li>jsonp  </li>
+<li>iframe</li>
+<li>代理</li>
+<li>CORS  </li>
+</ol>
+</blockquote>
+<p>用document.domain来指定域，是可以的，但是有局限性，也就是一级域名一致才可以。<br><a href="https://blog.csdn.net/yuan_zhikong/article/details/76038222" target="_blank" rel="noopener"><em><strong>参考document.domain</strong></em></a></p>
+<h3 id="拖动"><a href="#拖动" class="headerlink" title="拖动"></a>拖动</h3><p>ondragstart 事件在用户开始拖动元素或选择的文本时触发。  </p>
+<p><strong>PS:</strong>  </p>
+<ol>
+<li>为了让元素可拖动，需要使用 HTML5 <code>draggable=true</code> 属性。</li>
+<li>链接和图片默认是可拖动的，不需要 draggable 属性。</li>
+<li>Internet Explorer 8 及更早 IE 版本或 Safari 5.1 及更早版本的浏览器不支持 drag 事件。<br>在拖放的过程中会触发以下事件：  <blockquote>
+<p>在拖动目标上触发事件 (源元素):</p>
+<ul>
+<li>ondragstart - 用户开始拖动元素时触发</li>
+<li>ondrag - 元素正在拖动时触发</li>
+<li>ondragend - 用户完成元素拖动后触发</li>
+</ul>
+<p>释放目标时触发的事件:</p>
+<ul>
+<li>ondragenter - 当被鼠标拖动的对象进入其容器范围内时触发此事件</li>
+<li>ondragover - 当某被拖动的对象在另一对象容器范围内拖动时触发此事件</li>
+<li>ondragleave - 当被鼠标拖动的对象离开其容器范围内时触发此事件</li>
+<li>ondrop - 在一个拖动过程中，释放鼠标键时触发此事件</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<p><a href="http://www.runoob.com/try/try.php?filename=tryjsref_ondrag_all" target="_blank" rel="noopener">关于drag的一个demo</a></p>
+<h3 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h3><p><code>bind()</code> 方法的主要作用就是将函数绑定至某个对象，<code>bind()</code> 方法会创建一个函数，函数体内this对象的值会被绑定到传入<code>bind()</code> 函数的值</p>
+<h4 id="1-原理"><a href="#1-原理" class="headerlink" title="1. 原理"></a>1. 原理</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">var</span> self = <span class="keyword">this</span>; <span class="comment">// 保存原函数</span></span><br><span class="line"> <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">// 返回一个新函数</span></span><br><span class="line">  <span class="keyword">return</span> self.apply(context, <span class="built_in">arguments</span>); <span class="comment">// 执行新函数时，将传入的上下文context作为新函数的this</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-bind的应用场景"><a href="#2-bind的应用场景" class="headerlink" title="2. bind的应用场景"></a>2. bind的应用场景</h4><blockquote>
+<p>实现对象继承<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> A = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> B = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> A.bind(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">B.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> B(<span class="string">"hello"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(b.getName()); <span class="comment">// "hello"</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>事件处理</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> paint = &#123;</span><br><span class="line"> color: <span class="string">"red"</span>,</span><br><span class="line"> count: <span class="number">0</span>,</span><br><span class="line"> updateCount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.count++;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.count);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 事件处理函数绑定的错误方法：</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'button'</span>)</span><br><span class="line"> .addEventListener(<span class="string">'click'</span>, paint.updateCount); <span class="comment">// paint.updateCount函数的this指向变成了该DOM对象</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 事件处理函数绑定的正确方法：</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'button'</span>)</span><br><span class="line"> .addEventListener(<span class="string">'click'</span>, paint.updateCount.bind(paint)); <span class="comment">// paint.updateCount函数的this指向变成了paint</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>时间间隔函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> notify = &#123;</span><br><span class="line"> text: <span class="string">"Hello World！"</span>,</span><br><span class="line"> beforeRender: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.text);</span><br><span class="line"> &#125;,</span><br><span class="line"> render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> </span><br><span class="line">  <span class="comment">// 错误方法：</span></span><br><span class="line">  setTimeout(<span class="keyword">this</span>.beforeRender, <span class="number">0</span>); <span class="comment">// undefined</span></span><br><span class="line"> </span><br><span class="line">  <span class="comment">// 正确方法：</span></span><br><span class="line">  setTimeout(<span class="keyword">this</span>.beforeRender.bind(<span class="keyword">this</span>), <span class="number">0</span>); <span class="comment">// "Hello World！"</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">notify.render();</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>借用Array的原生方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;;</span><br><span class="line"><span class="built_in">Array</span>.prototype.push.bind(a, <span class="string">"hello"</span>, <span class="string">"world"</span>)();</span><br><span class="line"> </span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// "hello", "world"</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="3-与call-apply的区别"><a href="#3-与call-apply的区别" class="headerlink" title="3. 与call/apply的区别"></a>3. 与call/apply的区别</h4><p>共同点：  </p>
+<p>都可以改变函数执行的上下文环境；</p>
+<p>不同点：</p>
+<p>bind: 不立即执行函数，一般用在异步调用和事件； call/apply： 立即执行函数。</p>
+<h3 id="console"><a href="#console" class="headerlink" title="console"></a>console</h3><ol>
+<li><code>console.assert(expression, obj[, obj...])</code>  </li>
+</ol>
+<p>接收至少两个参数，第一个参数的值或返回值为false的时候，将会在控制台上输出后续参数的值. eg: </p>
+<blockquote>
+<p>console.assert(1 == 1, object); // 无输出，返回 undefined<br>console.assert(1 == 2, object); // 输出 object</p>
+</blockquote>
+<ol start="2">
+<li><code>console.error(obj[, obj...])</code>  </li>
+</ol>
+<p>用于输出错误信息，用法和常见的console.log一样，不同点在于输出内容会标记为错误的样式，便于分辨。  </p>
+<ol start="3">
+<li><code>console.dir(obj)</code>  </li>
+</ol>
+<p>将传入对象的属性，包括子对象的属性以列表形式输出. eg:</p>
+<blockquote>
+<p>var obj = { name: ‘classicemi’, college: ‘HUST’, major: ‘ei’};<br>console.dir(obj);</p>
+</blockquote>
+<ol start="4">
+<li><code>console.group()</code></li>
+</ol>
+<p>能够让控制台输出的语句产生不同的层级嵌套关系，每一个console.group()会增加一层嵌套，相反要减少一层嵌套可以使用console.groupEnd()方法。和console.group()相似的方法是console.groupCollapsed()作用相同，不同点是嵌套的输出内容是折叠状态，在有大段内容输出的时候使用这个方法可以使输出版面不至于太长吧.</p>
+<ol start="5">
+<li><p><code>console.info(obj[, obj...])</code><br>与之前说到的console.error一样，用于输出信息，没有什么特别之处。</p>
+</li>
+<li><p><code>console.table()</code>  </p>
+</li>
+</ol>
+<p>可将传入的对象，或数组以表格形式输出，相比传统树形输出，这种输出方案更适合内部元素排列整齐的对象或数组，不然可能会出现很多的 undefined。实际中感觉用得少。</p>
+<ol start="7">
+<li><code>console.profile([profileLabel])</code>  </li>
+</ol>
+<p>借助控制台以及console.profile()方法我们可以很方便地监控运行性能。</p>
+<ol start="8">
+<li><code>console.time(name)</code></li>
+</ol>
+<p>将成对的console.time()和console.timeEnd()之间代码的运行时间输出到控制台上，name参数可作为标签名。</p>
+<ol start="9">
+<li><code>console.trace()</code>  </li>
+</ol>
+<p>console.trace()用来追踪函数的调用过程。在大型项目尤其是框架开发中，函数的调用轨迹可以十分复杂，console.trace()方法可以将函数的被调用过程清楚地输出到控制台上。</p>
+<ol start="10">
+<li><code>console.warn(object[, object...])</code></li>
+</ol>
+<p>输出参数的内容，作为警告提示。</p>
+<p><em>console对象上的五个直接输出方法，console.log(),console.warn(),console.error(),console.exception()(等同于console.error())和console.info()，都可以使用占位符。支持的占位符有四种，分别是字符(%s)、整数(%d或%i)、浮点数(%f)和对象(%o)。</em> eg:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'%s是%d年%d月%d日'</span>, <span class="string">'今天'</span>, <span class="number">2014</span>, <span class="number">4</span>, <span class="number">15</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'圆周率是%f'</span>, <span class="number">3.14159</span>);</span><br><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">name</span>: <span class="string">'classicemi'</span>&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'%o'</span>, obj);</span><br></pre></td></tr></table></figure>
+<p><em>还有一种特殊的标示符%c，对输出的文字可以附加特殊的样式，当进行大型项目开发的时候，代码中可能有很多其他开发者添加的控制台语句。开发者对自己的输出定制特别的样式就可以方便自己在眼花缭乱的输出结果中一眼看到自己需要的内容。</em> eg:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'%cMy name is classicemi.'</span>, <span class="string">'color: #fff; background: #f40; font-size: 24px;'</span>);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mobrochu.github.io/blog/2018/05/17/前端小问题总结/" data-id="cjhamyvpu0001mcs6ctxvbtfi" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/document-domain-bind-console-jsonp/">document.domain bind console jsonp</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Jade入门学习" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/17/Jade入门学习/" class="article-date">
+    <a href="/blog/2018/05/17/Jade入门学习/" class="article-date">
   <time datetime="2018-05-17T12:09:31.000Z" itemprop="datePublished">2018-05-17</time>
 </a>
     
@@ -77,7 +220,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/17/Jade入门学习/">Jade入门学习</a>
+      <a class="article-title" href="/blog/2018/05/17/Jade入门学习/">Jade入门学习</a>
     </h1>
   
 
@@ -193,10 +336,10 @@ p= petName  // 或者 p #{petName}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://mobrochu.github.io/blog/2018/05/17/Jade入门学习/" data-id="cjhahtndy0000h7s6ghszo14x" class="article-share-link">Share</a>
+      <a data-url="http://mobrochu.github.io/blog/2018/05/17/Jade入门学习/" data-id="cjhamyvpp0000mcs6ekq7wbjo" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端-jade/">前端 jade</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/前端-jade/">前端 jade</a></li></ul>
 
     </footer>
   </div>
@@ -218,7 +361,7 @@ p= petName  // 或者 p #{petName}
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端-jade/">前端 jade</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/document-domain-bind-console-jsonp/">document.domain bind console jsonp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/前端-jade/">前端 jade</a></li></ul>
     </div>
   </div>
 
@@ -228,7 +371,7 @@ p= petName  // 或者 p #{petName}
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/前端-jade/" style="font-size: 10px;">前端 jade</a>
+      <a href="/blog/tags/document-domain-bind-console-jsonp/" style="font-size: 10px;">document.domain bind console jsonp</a> <a href="/blog/tags/前端-jade/" style="font-size: 10px;">前端 jade</a>
     </div>
   </div>
 
@@ -237,7 +380,7 @@ p= petName  // 或者 p #{petName}
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li></ul>
     </div>
   </div>
 
@@ -250,7 +393,11 @@ p= petName  // 或者 p #{petName}
       <ul>
         
           <li>
-            <a href="/2018/05/17/Jade入门学习/">Jade入门学习</a>
+            <a href="/blog/2018/05/17/前端小问题总结/">前端小问题总结</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/05/17/Jade入门学习/">Jade入门学习</a>
           </li>
         
       </ul>
@@ -273,9 +420,9 @@ p= petName  // 或者 p #{petName}
     </div>
     <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/blog/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
     
@@ -283,11 +430,11 @@ p= petName  // 或者 p #{petName}
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
+<script src="/blog/js/script.js"></script>
 
 
 
