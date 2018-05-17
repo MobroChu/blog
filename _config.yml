@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 不营养【技术博客】
 subtitle:
 description:
-keywords:
-author: John Doe
-language:
+keywords: js、css、html、react、redux、jade、webpack、gulp、antd、vue、vuex、backbone、markdown
+author: Mobro Zhu
+language: chinese
 timezone:
 
 # URL
