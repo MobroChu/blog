@@ -1,7 +1,7 @@
 ---
 title: Jade入门学习
 date: 2018-05-17 20:09:31
-tags: 前端 jade
+tags: [jade, pug]
 ---
 # **jade**:
 jade是超高性能的node JavaScript模板引擎，有着非常强大的API和大量杰出的特性。它主要针对node的服务端。由于商标的原因，改为Pug，哈巴狗。Pug有它本身的缺点——可移植性差，调试困难，性能并不出色，但使用它可以加快开发效率。  

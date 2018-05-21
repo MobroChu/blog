@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 不营养、【技术博客】
+title: 不营养、
 subtitle: 如果猎鹰，耽于安逸。 -- Mobro Zhu
 description:
-keywords: js、css、html、react、redux、jade、webpack、gulp、antd、vue、vuex、backbone、markdown
+keywords: js、css、html、react、redux、jade、webpack、gulp、antd、vue、vuex、backbone、markdown、前端
 author: Mobro Zhu
-language:
+language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://mobrochu.github.io/blog/
+url: http://mobrochu.github.io/blog/archives/
 root: /blog
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -73,7 +73,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+# theme: landscape
+theme: hexo-theme-next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -81,3 +82,6 @@ deploy:
   type: git
   repository: git@github.com:MobroChu/blog.git
   branch: master
+
+#  以下均为新增
+avatar: /images/avatar.jpg
