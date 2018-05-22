@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Mobro Zhu 
-subtitle: 如果猎鹰，耽于安逸。
+title: Mobro
+subtitle: 如果猎鹰，耽于安逸。 -- Mobro Zhu
 description:
 keywords: js、css、html、react、redux、jade、webpack、gulp、antd、vue、vuex、backbone、markdown、前端
 author: Mobro Zhu
-language: zh-Hans
+language: zh-CN
 timezone:
 
 # URL
@@ -74,7 +74,8 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
-theme: hexo-theme-next
+# theme: hexo-theme-next
+theme: maupassant-hexo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
