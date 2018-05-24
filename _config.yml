@@ -13,8 +13,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://mobrochu.github.io/blog/archives/
-root: /blog
+url: http://mobrochu.github.io/archives/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -81,7 +81,7 @@ theme: maupassant-hexo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:MobroChu/blog.git
+  repository: git@github.com:MobroChu/MobroChu.github.io.git
   branch: master
 
 #  以下均为新增
