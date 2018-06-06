@@ -37,6 +37,7 @@ git push origin :G  # 删除远程仓库的G分支
 git checkout -b A   # 创建A分支，并切换到A分支下
 git checkout A      # 从当前分支切换到A分支下
 git merge A         # 将A分支合并到当前分支
+git fetch           # 获取远程分支
 ```
 
 ### 版本相关
@@ -65,6 +66,7 @@ git push -u origin A    # 推送到远程仓库
 ``` git
 git stash           # 添加储藏
 git stash list      # 查看储藏
+git rm -f --cached ./filename  # 清除缓存 (!慎用)
 ```
 
 以上是我近期常用的git命令，当然，还有许多其他命令，包括上述命令需带的参数，待后续补齐。just 未完待续、
