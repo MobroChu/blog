@@ -4,10 +4,6 @@ date: 2018-05-24 15:22:30
 tags: git
 description: 本文为自我学习篇，当做自己做的笔记。仅供自己以后翻阅
 ---
-*Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。
-Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。*
-
-下面，请跟着一起了解常用的 git 命令：
 
 *Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。
 Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。*
@@ -65,10 +61,23 @@ git push -u origin A    # 推送到远程仓库
     ## A 要推送到A分支下
 ```
 
-### 其他
+### 常使用到的暂存命令
 ``` git
 git stash           # 添加储藏
+git stash push -m "注释内容"
 git stash list      # 查看储藏
+# 使用 num 这个版本号的 stash， 其中 num 为数字
+## pop 会删除 stash 队列中的 num 这个缓存版本，apply 不会。
+git stash pop stash@{num}
+git stash apply stash@{num}
 ```
 
-以上是我近期常用的git命令，当然，还有许多其他命令，包括上述命令需带的参数，待后续补齐。just 未完待续、
+### 其他
+``` git
+git pull            # 拉取远程当前分支的最新代码
+# 把所有的remote变化都拉下来，并且将你最新的commit置于最顶上
+git pull --rebase   
+```
+
+还有许多命令，待后续补齐。just 未完待续、
+

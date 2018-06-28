@@ -2,4 +2,4 @@ test.*
 .DS_Store
 /node_modules/
 /public/
-.deploy_git
+**/.DS_Store
