@@ -144,7 +144,7 @@ ps:
     color: black; } }
 ```
 
-3. 分享几个我常用的 mixin
+##### 3. 分享几个我常用的 mixin
 ``` scss
 // 浮动
 @mixin float($f: left) {
@@ -188,5 +188,26 @@ ps:
 .test {
     @include size(200px);
     @include size(200px, 200px);
+}
+// 标题一行，多余用省略号
+@mixin text-overflow {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+// 文字不换行
+@mixin word-break {
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+}
+// 圆角
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+    // 这样写是不是就更完美了。
+    // @include prefix(border-radius, $radius); 
 }
 ```
