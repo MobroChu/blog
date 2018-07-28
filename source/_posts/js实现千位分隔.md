@@ -28,7 +28,7 @@ var str = "hello world, hello MobroZhu, not Mobro Zhu";
 var reg = [/Mobro\b/g, /Mobro/g];
 console.log(reg[0], reg[0].exec(str) , "\n" + reg[1], reg[1].exec(str));
 ``` 
-打印日志如下：  
+打印日志如下：    
 
 ```js
 /Mobro\b/g ["Mobro", index: 33, input: "hello world, hello MobroZhu, not Mobro Zhu"] "
