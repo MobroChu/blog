@@ -1,9 +1,12 @@
 ---
-title: vue学习笔记（一）
-date: 2018-07-27 18:43:33
-tags: [vue, vue-cli]
-description: 对于 vue 官网给的教程由浅及深，非常容易上手。我之前有过 react 项目开发经验，对 webpack 打包，脚手架这一类的东西并不陌生。所以也是我上手比较快的原因吧。简单将我在学习 vue 中遇见的问题和我觉得比较重要的东西记录一下，增加记忆。先说好，我这是个人笔记，不是教程，不喜勿喷。
+
+title: vue学习笔记（一）  
+date: 2018-07-27 18:43:33  
+tags: [vue, vue-cli]  
+description: 对于 vue 官网给的教程由浅及深，非常容易上手。我之前有过 react 项目开发经验，对 webpack 打包，脚手架这一类的东西并不陌生。所以也是我上手比较快的原因吧。简单将我在学习 vue 中遇见的问题和我觉得比较重要的东西记录一下，增加记忆。先说好，我这是个人笔记，不是教程，不喜勿喷。  
+
 ---
+
 
 *对于 vue 官网给的教程由浅及深，非常容易上手。我之前有过 react 项目开发经验，对 webpack 打包，脚手架这一类的东西并不陌生。所以也是我上手比较快的原因吧。简单将我在学习 vue 中遇见的问题和我觉得比较重要的东西记录一下，增加记忆。先说好，我这是个人笔记，不是教程，不喜勿喷。*
 
@@ -73,15 +76,15 @@ vm.$watch('a', function(newValue, oldValue) {
     
 ```
 再举个栗子：  
-![image]()
+![image]("/images/201807/WX20180727-180222.png")
 具体可以查看 [API了解更多](https://cn.vuejs.org/v2/api/#%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7)
 
 #### 生命周期
 
 要说，生命周期是最基础，最必须要理解的。和 react 一样，每个实例在被创建时，都会经历几个阶段。beforeCreate，created， beforeMount， mounted， beforeUpdate， updated， beforeDestroy， destroyed
 
-#### 模板语法
-##### # 插值
+## 模板语法
+#### # 插值
 数据绑定最常见的形式就是使用“Mustache”语法（双大括号）  ==> 一般用于插入文本
 v-html： Mustache 会将数据解析成普通文本，而非 html 代码。  
 
@@ -104,7 +107,7 @@ Mustache 语法不能作用在 html 特性上，遇到这种情况应该使用 v
 
 PS: 模板表达式都被放在沙盒中，只能访问全局变量的一个白名单，如 Math 和 Date 。你不应该在模板表达式中试图访问用户定义的全局变量。  
 
-##### # 指令
+#### # 指令
 指令 (Directives) 是带有 v- 前缀的特殊特性。指令特性的值预期是单个 JavaScript 表达式 (v-for 是例外情况，稍后我们再讨论)。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。  
 
 一些指令能够接收一个“参数”，在指令名称之后以冒号表示。eg: v-bind, v-on  
@@ -125,7 +128,7 @@ PS: 模板表达式都被放在沙盒中，只能访问全局变量的一个白�
 <a @click="do">bbb</a>
 ```
 
-##### # 计算属性和侦听器
+#### # 计算属性和侦听器
 
 PS: 对于任何复杂逻辑，都应当使用计算属性（computed）;
 
@@ -175,7 +178,7 @@ Vue.component('my-component', {
 ```
 尤其注意，这里的 truthy 不是 true 哈。详情参见[MDN](https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy)  
 
-##### # 条件渲染
+#### # 条件渲染
 **v-show**  
 1. 始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS 属性 display。
 2. v-show 不支持 <template> 元素，也不支持 v-else。
@@ -216,11 +219,11 @@ example1.items = example1.items.filter(function (item) {
 你可能认为这将导致 Vue 丢弃现有 DOM 并重新渲染整个列表。幸运的是，事实并非如此。Vue 为了使得 DOM 元素得到最大范围的重用而实现了一些智能的、启发式的方法，所以用一个含有相同元素的数组去替换原来的数组是非常高效的操作。  
 
 ---
-PS:   
-由于 JavaScript 的限制，Vue 不能检测以下变动的数组：
+#### PS:   
+**① 由于 JavaScript 的限制，Vue 不能检测以下变动的数组：**
 
-1. 当利用索引直接设置一个项时，例如：vm.items[indexOfItem] = newValue
-2. 当修改数组的长度时，例如：vm.items.length = newLength
+_1. 当利用索引直接设置一个项时，例如：vm.items[indexOfItem] =newValue_  
+_2. 当修改数组的长度时，例如：vm.items.length = newLength_
 举个栗子：   
 ```js
 var vm = new Vue({
@@ -244,11 +247,104 @@ vm.$set(vm.items, indexOfItem, newValue)
 
 // 解决第二类问题
 vm.items.splice(newLength)
+``` 
+
+**② 由于js的限制，Vue不能检测对象属性的添加或删除：**
+譬如，  
+```js
+var vm = new Vue({
+	data: {
+		userProfile: {
+			name: "Mobro"
+		}
+	}
+})
+
+// 1
+Vue.set(userProfile, "age", 23);
+
+// 2
+vm.$set(userProfile, "age", 23);
+
+// 3
+vm.userProfile = Object.assign(vm.userProfile, {
+	age: 23,
+	sex: male
+})
+
 ```
+**③ v-for 也可以用来取整数**
+
 ---
 
+v-for 和 v-if 在同一个节点上的时候， v-for 比 v-if 优先级更高，即 v-if 将分别重复运行于每个 v-for 循环中。
 
+⭐️ 注意组件上的 is 属性使用哈。
 
+#### #事件处理
+1. v-on 监听 DOM 事件，并在触发时运行一些 js 代码。
+2. v-on 可以接受一个需要调用的方法名称。
+3. @click="say('the name is: ', $event)"  // $event 是当前 dom 元素
+
+**事件修饰符：**
+- `.stop`   阻止事件继续传播，即捕获和冒泡
+- `.prevent` 阻止默认事件，等同于 ev.preventDefault()
+- `.capture` 添加事件监听器时使用事件捕获模式，即在捕获模式下触发
+- `.self` 当前元素是自身时才会触发函数，是根据 ev.target 是不是自身来决定是否触发
+- `.once` 只触发一回，也可以用于用户自定义组件事件上。
+- `.passive` 解决浏览器卡顿的新特性，尤其能够提升移动端性能 [参考文章](https://www.cnblogs.com/ziyunfei/p/5545439.html)  
+
+_js
+不要把 `.passive` 和 `.prevent` 一起使用，因为 `.prevent` 将会被忽略，同时浏览器可能会报警告。`.passive` 会告诉浏览器你 不想 阻止事件的默认行为。_
+
+**按键修饰符**
+- `.enter`
+- `.tab`
+- `.delete` (捕获 “删除” 和 “退格” 键)
+- `.esc`
+- `.space`
+- `.up`
+- `.down`
+- `.left`
+- `.right`  
+
+通过全局 config.keyCodes 对象 自定义按键修饰符别名：  
+Vue.config.keyCodes.f1 = 112;  
+
+有些按键（.esc 以及所有方向键）在 IE9 中有不同的 key 值，若想支持 IE9， 它们的内置别名应该是首选。  
+
+**系统修饰符**  
+可以用如下修饰符来实现仅在按下相应按键时才触发鼠标或键盘事件的监听器。  
+- `.ctrl`
+- `.alt`
+- `.shift`
+- `.meta` 在 mac 上，对应 command 键。在 windows 对应 win 键。 
+- `.exact` 修饰符允许你控制由精确的系统修饰符组合触发的事件。
+
+eg：  
+```html
+<!-- 即使 Alt 或 Shift 被一同按下时也会触发 -->
+<button @click.ctrl="onClick">A</button>
+
+<!-- 有且只有 Ctrl 被按下的时候才触发 -->
+<button @click.ctrl.exact="onCtrlClick">A</button>
+
+<!-- 没有任何系统修饰符被按下的时候才触发 -->
+<button @click.exact="onClick">A</button>
+```
+**鼠标按钮修饰符**
+- `.left`
+- `.right`
+- `.middle`  
+
+这些修饰符会限制处理函数仅相应特定的鼠标按钮。
+
+Q: 为什么在 html 中监听事件？  
+
+A: 你可能注意到这种事件监听的方式有点违背了关注点分离这个长期以来的优良传统。但不必担心，因为所有的 vue.js 事件处理方式和表达式都严格绑定在当前视图的 viewModel 上，它不会导致任何维护上的困难。实际上，使用 v-on 有几个好处：  
+1. 扫一眼 html 模板便能轻松定位在 javascript 代码里对应的方法。  
+2. 因为你无须再 javascript 里手动绑定事件，你的viewModel 代码可以是非常纯粹的逻辑，和 dom 完全解耦，更易于测试。  
+3. 当一个 ViewModel 被销毁时，所有的事件处理器都会自动被删除。你无须担心如何清理它们。  
 
 
 
