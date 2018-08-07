@@ -48,21 +48,37 @@ console.log(reg[0], reg[0].exec(str) , "\n" + reg[1], reg[1].exec(str));
 
 ok! 我们来写个例子测试一下咱们写的这个千位分隔的函数。  
 ```js
-var data1 = [123.456789, 123, -123.456789, "000.1234567", -0.167321341];
+var data1 = [
+	123.456789, 
+	123, 
+	-123.456789, 
+	"000.1234567", 
+	-0.167321341
+];
 var data2 = [
 	[0.123479439034, 3],
 	[093.238108349, 4],
 	[-13.37421094, 0],
 	[-123478932789, 4],
-	[-00000.12654, 0]
+	[-0.12654, 0]
 ]
 for (var i = 0; i < data1.length; i++) {
-	console.log("\n" + data1[i] + "  ==> ", splitThousands(data1[i]))
+	console.log(
+		"\n" + data1[i] + "  ==> ", 
+		splitThousands(data1[i])
+	)
 }
 for (var i = 0; i < data2.length; i++) {
-	console.log("\n" + data2[i][0] + " 保留 " + data2[i][1] + " 位小数  ==> ", splitThousands(data2[i][0], data2[i][1]))
+	console.log(
+		"\n" + data2[i][0] + " 保留 " + data2[i][1] + " 位小数  ==> ", 
+		splitThousands(data2[i][0], data2[i][1])
+	)
 }
 ```
+
+打印的结果如下： 
+![](/images/201807/WX20180807-110131.png)
+
 
 
 ----
