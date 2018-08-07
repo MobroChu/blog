@@ -60,7 +60,8 @@ for (var i = 0; i < data1.length; i++) {
 	console.log("\n" + data1[i] + "  ==> ", splitThousands(data1[i]))
 }
 for (var i = 0; i < data2.length; i++) {
-	console.log("\n" + data2[i][0] + " 保留 " + data2[i][1] + " 位小数  ==> ", splitThousands(data2[i][0], data2[i][1]))
+	console.log("\n" + data2[i][0] + " 保留 " + data2[i][1] + " 位小数  ==> ", 
+	splitThousands(data2[i][0], data2[i][1]))
 }
 ```
 
