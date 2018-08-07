@@ -13,10 +13,11 @@ description: 最近一个项目中使用到了千位分隔这个功能，在网�
 function splitThousands(num, fixed) {
 	var reg = /\B(?=(\d{3})+$)/g;
 	num = num.toString().split(".");
+	fixed = fixed == undefined ? 2 : fixed;
 	
-	num[1] = num[1] ? num[1].substr(0, fixed || 2) : "00000000000000000".substr(0, fixed || 2);
+	num[1] = num[1] ? num[1].substr(0, fixed) : "00000000000000000".substr(0, fixed);
 	
-	return num.join(".");
+	return fixed ? num.join(".") : num[0];
 }
 ```
 这个方法实现非常简单，就是一个正则的问题。在该实现方法中，难点还是这个正则。  
@@ -43,6 +44,24 @@ console.log(reg[0], reg[0].exec(str) , "\n" + reg[1], reg[1].exec(str));
 "1234567a789".replace(/(?=(\d{3})+)/, "0")   // 0123456a789
 // eg2
 "1234567a789".replace(/(?=(\d{3})+)/g, "0")  // 0102030456a0789
+```
+
+ok! 我们来写个例子测试一下咱们写的这个千位分隔的函数。  
+```js
+var data1 = [123.456789, 123, -123.456789, "000.1234567", -0.167321341];
+var data2 = [
+	[0.123479439034, 3],
+	[093.238108349, 4],
+	[-13.37421094, 0],
+	[-123478932789, 4],
+	[-00000.12654, 0]
+]
+for (var i = 0; i < data1.length; i++) {
+	console.log("\n" + data1[i] + "  ==> ", splitThousands(data1[i]))
+}
+for (var i = 0; i < data2.length; i++) {
+	console.log("\n" + data2[i][0] + " 保留 " + data2[i][1] + " 位小数  ==> ", splitThousands(data2[i][0], data2[i][1]))
+}
 ```
 
 
